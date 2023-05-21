@@ -53,7 +53,7 @@ powerButton.addEventListener("click", () => {
         inputArea.value = numberInitial;
         powerOn = true;
     }
-     if (powerOn === true) {
+     if (powerOn) {
 
         powerOn = false;
 }

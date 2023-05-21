@@ -80,8 +80,8 @@ body {
     pointer-events: none;
 }
 
-.buttons .inative {
-    background-color: #dcdcdc;
+.off-mode.inative {
+    background-color: #696969;
     font-size: 13px;
     cursor: auto;
     pointer-events: none;
