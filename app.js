@@ -1,56 +1,80 @@
-const inputArea = document.querySelector('.display')
-const divButtons = document.querySelector('.buttons')
-const powerButton = document.querySelector('.power')
-const sound = document.getElementById('sound')
-const soundButton = document.querySelector('.btn-sound')
+const inputArea = document.querySelector(".display");
+const divButtons = document.querySelector(".buttons");
+const powerButton = document.querySelector(".power-btn");
+const sound = document.getElementById("sound");
+const soundButton = document.querySelector(".sound-btn");
+
+let soundEffect = false;
+let powerOn = false;
+let numberInitial = "0";
 
 
-divButtons.addEventListener('click', e => {
 
 
-    if(e.target.value === '='){
-      
-        inputArea.value = eval(inputArea.value)
-        result = eval(inputArea.value)
-        inputArea.value = eval(result += e.target.value)
+
+divButtons.addEventListener("click", (e) => {
+
+    const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+    numbers.forEach((number) => {
+        if (e.target.value === String(number)) {
+            if (inputArea.value === "0") {
+                inputArea.value = "";
+            }
+        }
+    });
+
+    if (e.target.classList.contains('inative')){
+        console.log('oi')
     }
-  
-    inputArea.value += e.target.value
+
+    if (soundEffect) {
+        sound.play();
+    }
+
+    if (e.target.classList.contains("=")) {
+        inputArea.value = eval(inputArea.value);
+        result = eval(inputArea.value);
+        inputArea.value = eval((result += e.target.value));
+    }
+    inputArea.value += e.target.value;
+
+    if (e.target.classList.contains("clear")) {
+        numberInitial = '0'
+        inputArea.value = numberInitial;
+    }
+
+    if (e.target.classList.contains("power")) {
+        inputArea.classList.toggle("off-mode");
+        divButtons.classList.toggle("off-mode");
+    }
+});
+
+powerButton.addEventListener("click", () => {
+    soundEffect = true;
+    if (powerOn === false) {
+        inputArea.classList.toggle("off-mode");
+        divButtons.classList.toggle("off-mode");
+        inputArea.value = numberInitial;
+        numberInitial = ''
+        powerOn = true;
+    }
+     if (powerOn === true) {
    
-    
-    if (e.target.value === 'C'){
-       location.reload()
-       
-    }
-
-    if (e.target.classList.contains('power')){
-       inputArea.classList.toggle('off-mode')
-       divButtons.classList.toggle('off-mode')
-    }
-
+        powerOn = false;
+}
    
-})
+});
 
-
-powerButton.addEventListener('click', () => {
-
-    if(powerButton){
-       inputArea.value = ''
-        inputArea.classList.toggle('off-mode')
-        divButtons.classList.toggle('off-mode')
+soundButton.addEventListener("click", () => {
+    if (soundEffect) {
+        sound.play();
+        soundEffect = false;
+    } else {
+        soundEffect = true;
     }
 
-})
-
-soundButton.addEventListener('click', () =>{
-    let soundEffect = true
-
-    if(soundEffect){
-        sound.play()
-        soundEffect = false
-
-    }else{
-        sound.pause()
-         soundEffect = true
+    if (powerOn) {
+        soundEffect = false;
     }
-})
+});

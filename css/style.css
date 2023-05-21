@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "calculator";
+    src: url(./font/Calculator.ttf);
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -18,25 +23,31 @@ body {
     width: 230px;
     min-height: 365px;
     padding: 10px;
-    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+        rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+        rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    border-radius: 20px;
 }
 
 .display {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 20px;
+    font-family: "calculator";
+    color: black;
+    font-weight: bold;
+    font-size: 35px;
     padding: 5px;
     background-color: #dcdcdc;
     border-style: none;
     text-align: end;
     height: 60px;
     width: 100%;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-    margin-top: 20px; 
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+        rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    margin-top: 40px;
     margin-bottom: 28px;
+    border-style: groove;
 }
 
 .buttons {
-
     display: grid;
     grid-template: repeat(5, 52px) / repeat(4, 52px);
 }
@@ -48,18 +59,28 @@ body {
     margin: 3px;
     cursor: pointer;
 }
- .power {
+
+.control-btn .power-btn {
     font-size: 13px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 2px;
     margin-left: 4px;
     margin-bottom: 10px;
-   
+    border-radius: 8px;
+}
+
+.control-btn .sound-btn {
+    width: 46px;
+    height: 22px;
+    margin-left: 3px;
+    border-radius: 8px;
 }
 
 .buttons.off-mode {
     pointer-events: none;
 }
 
-.buttons.inative {
+.buttons .inative {
     background-color: #dcdcdc;
     font-size: 13px;
     cursor: auto;
