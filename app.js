@@ -8,10 +8,6 @@ let soundEffect = false;
 let powerOn = false;
 let numberInitial = "0";
 
-
-
-
-
 divButtons.addEventListener("click", (e) => {
 
     const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -23,10 +19,6 @@ divButtons.addEventListener("click", (e) => {
             }
         }
     });
-
-    if (e.target.classList.contains('inative')){
-        console.log('oi')
-    }
 
     if (soundEffect) {
         sound.play();
