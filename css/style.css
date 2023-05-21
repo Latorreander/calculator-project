@@ -48,6 +48,23 @@ body {
     margin: 3px;
     cursor: pointer;
 }
+ .power {
+    font-size: 13px;
+    margin-left: 4px;
+    margin-bottom: 10px;
+   
+}
 
-.buttons .inative {
+.buttons.off-mode {
+    pointer-events: none;
+}
+
+.buttons.inative {
     background-color: #dcdcdc;
+    font-size: 13px;
+    cursor: auto;
+    pointer-events: none;
+}
+.display.off-mode {
+    background-color: #696969;
+}

@@ -9,13 +9,15 @@
     </head>
     <body>
         <main class="calculator">
-            <input class="display" type="text" value="" disabled/>
+            <audio id="sound" src="./css/sounds/cork-85200.mp3"></audio>
+            <input class="display off-mode" type="text" value="" disabled/>
+            <button class="power">on/off</button>
+            <button class="btn-sound">🎵</button>
+            <div class="buttons off-mode">
 
-            <div class="buttons">
-
+                
+                <button class="inative"></button>
                 <button value="C">C</button>
-                <button class="inative"></button>
-                <button class="inative"></button>
                 <button value="/">÷</button>
                 <button value="7">7</button>
                 <button value="8">8</button>
@@ -31,7 +33,6 @@
                 <button value="+">+</button>
                 <button value=".">.</button>
                 <button value="0">0</button>
-                <button class="inative"></button>
                 <button value="=">=</button>
             </div>
         </main>
