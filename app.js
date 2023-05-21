@@ -43,12 +43,12 @@ divButtons.addEventListener("click", (e) => {
 });
 
 powerButton.addEventListener("click", () => {
+
     soundEffect = true;
     if (powerOn === false) {
         inputArea.classList.toggle("off-mode");
         divButtons.classList.toggle("off-mode");
         inputArea.value = numberInitial;
-        numberInitial = ''
         powerOn = true;
     }
      if (powerOn === true) {
