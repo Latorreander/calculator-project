@@ -76,7 +76,7 @@ body {
     border-radius: 8px;
 }
 
-.buttons.off-mode {
+.off-mode {
     pointer-events: none;
 }
 

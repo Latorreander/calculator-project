@@ -3,8 +3,9 @@ const divButtons = document.querySelector(".buttons");
 const powerButton = document.querySelector(".power-btn");
 const sound = document.getElementById("sound");
 const soundButton = document.querySelector(".sound-btn");
+const soundPower = document.getElementById('soundPower')
 
-let soundEffect = false;
+let soundEffect = true;
 let powerOn = false;
 let numberInitial = "0";
 
@@ -44,29 +45,27 @@ divButtons.addEventListener("click", (e) => {
 
 powerButton.addEventListener("click", () => {
 
-    soundEffect = true;
+    soundPower.play()
     if (powerOn === false) {
         inputArea.classList.toggle("off-mode");
         divButtons.classList.toggle("off-mode");
+        soundButton.classList.toggle('off-mode')
         inputArea.value = numberInitial;
         powerOn = true;
     }
      if (powerOn === true) {
-   
+
         powerOn = false;
 }
    
 });
 
 soundButton.addEventListener("click", () => {
+
     if (soundEffect) {
-        sound.play();
+        sound.pause();
         soundEffect = false;
     } else {
         soundEffect = true;
-    }
-
-    if (powerOn) {
-        soundEffect = false;
-    }
+     }
 });
