@@ -4,6 +4,8 @@ import {
     resetDisplay,
     showNumbersOfDisplay,
     musicEffectButtonNumbers,
+    sqrRoot,
+    backSpace,
 } from "./divBtn-func.js";
 
 import { playSoundButtons } from "./soundBtn-func.js";
@@ -16,8 +18,15 @@ const powerButton = document.querySelector(".power-btn");
 const sound = document.getElementById("sound");
 const soundButton = document.querySelector(".sound-btn");
 const soundPower = document.getElementById("soundPower");
+const sqrRootButton = document.querySelector(".sqr-root");
+const backSpaceButton = document.querySelector(".back-space");
 
 let initialNumber = "0";
+
+sqrRootButton.addEventListener("click", () => {
+    let number = inputArea.value;
+    sqrRoot(number);
+});
 
 divButtons.addEventListener("click", (e) => {
     replaceInitialNumber(e);
@@ -35,4 +44,9 @@ powerButton.addEventListener("click", () => {
 soundButton.addEventListener("click", () => {
     playSoundButtons();
 });
+
+backSpaceButton.addEventListener("click", () => {
+    backSpace();
+});
+
 export { inputArea, divButtons, soundButton, initialNumber, sound };

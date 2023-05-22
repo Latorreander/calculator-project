@@ -38,10 +38,28 @@ const resetDisplay = (e) => {
     }
 };
 
+const sqrRoot = number =>{
+    
+    const sqrResult = Math.sqrt(number)
+    inputArea.value = sqrResult
+}
+
+const backSpace = () => {
+
+    let numbersArray =  inputArea.value.split('')
+    numbersArray.pop() 
+    inputArea.value = numbersArray.join('')
+    if (numbersArray.length === 0){
+        inputArea.value = 0
+    }  
+}
+
+
 export {
     replaceInitialNumber,
     expressionTransform,
     resetDisplay,
     showNumbersOfDisplay,
     musicEffectButtonNumbers,
+    sqrRoot, backSpace
 };
