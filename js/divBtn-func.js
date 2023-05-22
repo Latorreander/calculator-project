@@ -1,4 +1,4 @@
-import { inputArea } from "./app.js";
+import { displayArea } from "./app.js";
 import { soundEffect } from "./soundBtn-func.js";
 
 const replaceInitialNumber = (e) => {
@@ -6,8 +6,8 @@ const replaceInitialNumber = (e) => {
 
     numbers.forEach((number) => {
         if (e.target.value === String(number)) {
-            if (inputArea.value === "0") {
-                inputArea.value = "";
+            if (displayArea.value === "0") {
+                displayArea.value = "";
             }
         }
     });
@@ -15,17 +15,18 @@ const replaceInitialNumber = (e) => {
 
 const expressionTransform = (e) => {
     if (e.target.classList.contains("=")) {
-        inputArea.value = eval(inputArea.value);
-        let result = eval(inputArea.value);
-        inputArea.value = eval((result += e.target.value));
+        displayArea.value = eval(displayArea.value);
+        let result = eval(displayArea.value);
+        displayArea.value = eval((result += e.target.value));
     }
 };
 
 const showNumbersOfDisplay = (e) => {
-    inputArea.value += e.target.value;
+    displayArea.value += e.target.value;
 };
 
 const musicEffectButtonNumbers = () => {
+
     if (soundEffect) {
         sound.play();
     }
@@ -34,23 +35,23 @@ const musicEffectButtonNumbers = () => {
 const resetDisplay = (e) => {
     if (e.target.classList.contains("clear")) {
         let initialNumber = "0";
-        inputArea.value = initialNumber;
+        displayArea.value = initialNumber;
     }
 };
 
 const sqrRoot = number =>{
     
     const sqrResult = Math.sqrt(number)
-    inputArea.value = sqrResult
+    displayArea.value = sqrResult
 }
 
 const backSpace = () => {
 
-    let numbersArray =  inputArea.value.split('')
+    const numbersArray =  displayArea.value.split('')
     numbersArray.pop() 
-    inputArea.value = numbersArray.join('')
+    displayArea.value = numbersArray.join('')
     if (numbersArray.length === 0){
-        inputArea.value = 0
+        displayArea.value = 0
     }  
 }
 

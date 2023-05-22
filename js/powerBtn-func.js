@@ -1,18 +1,18 @@
-import { inputArea, divButtons, soundButton, initialNumber } from "./app.js";
+import { displayArea, divButtons, soundButton, initialNumber } from "./app.js";
 
 let powerOn = false;
 
 const power = () => {
     if (powerOn === false) {
-        inputArea.classList.toggle("off-mode");
+        displayArea.classList.toggle("off-mode");
         divButtons.classList.toggle("off-mode");
         soundButton.classList.toggle("off-mode");
-        inputArea.value = initialNumber;
+        displayArea.value = initialNumber;
         powerOn = true;
     } else if (powerOn) {
-        inputArea.classList.toggle("off-mode");
+        displayArea.classList.toggle("off-mode");
         divButtons.classList.toggle("off-mode");
-        inputArea.value = "";
+        displayArea.value = "";
         powerOn = false;
     }
 };

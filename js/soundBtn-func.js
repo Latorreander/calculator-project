@@ -1,7 +1,7 @@
 import { sound } from "./app.js";
 let soundEffect = true;
 
-const playSoundButtons = () => {
+const onOffSoundButtons = () => {
     if (soundEffect) {
         sound.pause();
         soundEffect = false;
@@ -10,4 +10,4 @@ const playSoundButtons = () => {
     }
 };
 
-export { playSoundButtons, soundEffect };
+export { onOffSoundButtons, soundEffect };

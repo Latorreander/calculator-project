@@ -8,11 +8,11 @@ import {
     backSpace,
 } from "./divBtn-func.js";
 
-import { playSoundButtons } from "./soundBtn-func.js";
+import { onOffSoundButtons } from "./soundBtn-func.js";
 
 import { power } from "./powerBtn-func.js";
 
-const inputArea = document.querySelector(".display");
+const displayArea = document.querySelector(".display");
 const divButtons = document.querySelector(".buttons");
 const powerButton = document.querySelector(".power-btn");
 const sound = document.getElementById("sound");
@@ -24,11 +24,11 @@ const backSpaceButton = document.querySelector(".back-space");
 let initialNumber = "0";
 
 sqrRootButton.addEventListener("click", () => {
-    let number = inputArea.value;
+    let number = displayArea.value;
     sqrRoot(number);
 });
 
-divButtons.addEventListener("click", (e) => {
+divButtons.addEventListener("mousedown", (e) => {
     replaceInitialNumber(e);
     expressionTransform(e);
     musicEffectButtonNumbers();
@@ -42,11 +42,12 @@ powerButton.addEventListener("click", () => {
 });
 
 soundButton.addEventListener("click", () => {
-    playSoundButtons();
+    onOffSoundButtons();
+    sound.play()
 });
 
 backSpaceButton.addEventListener("click", () => {
     backSpace();
 });
 
-export { inputArea, divButtons, soundButton, initialNumber, sound };
+export { displayArea, divButtons, soundButton, initialNumber, sound };
