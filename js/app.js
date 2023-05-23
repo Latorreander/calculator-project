@@ -36,7 +36,7 @@ divButtons.addEventListener("mousedown", (e) => {
     musicEffectButtonNumbers();
     showNumbersOfDisplay(e);
     resetDisplay(e);
-    calcPercentage(e)
+    // calcPercentage(e)
 });
 
 powerButton.addEventListener("click", () => {
@@ -49,21 +49,21 @@ soundButton.addEventListener("click", () => {
     sound.play()
 });
 
-const calcPercentage = (e) => {
+// const calcPercentage = (e) => {
    
-const value1 = 1000
-const value2 = 50
+// const value1 = 1000
+// const value2 = 50
 
-console.log(value2)
-console.log(value1)
+// console.log(value2)
+// console.log(value1)
 
-const percent = value1 * (value2 /100)
-if (e.target.classList.contains('=')){
-    displayArea.value = value1 - percent
-}
+// const percent = value1 * (value2 /100)
+// if (e.target.classList.contains('=')){
+//     displayArea.value = value1 - percent
+// }
  
 
-}
+// }
 
 
 export { displayArea, divButtons, soundButton, initialNumber, sound };
