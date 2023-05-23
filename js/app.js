@@ -22,7 +22,7 @@ const sqrRootButton = document.querySelector(".sqr-root");
 const percentageButton = document.querySelector('.percentage')
 
 
-let initialNumber = "0";
+let initialNumber = "0.";
 
 sqrRootButton.addEventListener("click", () => {
     let number = displayArea.value;
