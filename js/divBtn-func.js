@@ -26,7 +26,6 @@ const showNumbersOfDisplay = (e) => {
 };
 
 const musicEffectButtonNumbers = () => {
-
     if (soundEffect) {
         sound.play();
     }
@@ -39,22 +38,21 @@ const resetDisplay = (e) => {
     }
 };
 
-const sqrRoot = number =>{
-    
-    const sqrResult = Math.sqrt(number)
-    displayArea.value = sqrResult
-}
+const sqrRoot = (number) => {
+    const sqrResult = Math.sqrt(number);
+    displayArea.value = sqrResult;
+};
 
-const backSpace = () => {
-
-    const numbersArray =  displayArea.value.split('')
-    numbersArray.pop() 
-    displayArea.value = numbersArray.join('')
-    if (numbersArray.length === 0){
-        displayArea.value = 0
-    }  
-}
-
+const backSpace = (e) => {
+    if (e.target.classList.contains("back-space")) {
+        const numbersArray = displayArea.value.split("");
+        numbersArray.pop();
+        displayArea.value = numbersArray.join("");
+        if (numbersArray.length === 0) {
+            displayArea.value = 0;
+        }
+    }
+};
 
 export {
     replaceInitialNumber,
@@ -62,5 +60,6 @@ export {
     resetDisplay,
     showNumbersOfDisplay,
     musicEffectButtonNumbers,
-    sqrRoot, backSpace
+    sqrRoot,
+    backSpace,
 };

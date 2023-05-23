@@ -19,7 +19,8 @@ const sound = document.getElementById("sound");
 const soundButton = document.querySelector(".sound-btn");
 const soundPower = document.getElementById("soundPower");
 const sqrRootButton = document.querySelector(".sqr-root");
-const backSpaceButton = document.querySelector(".back-space");
+const percentageButton = document.querySelector('.percentage')
+
 
 let initialNumber = "0";
 
@@ -31,9 +32,11 @@ sqrRootButton.addEventListener("click", () => {
 divButtons.addEventListener("mousedown", (e) => {
     replaceInitialNumber(e);
     expressionTransform(e);
+    backSpace(e);
     musicEffectButtonNumbers();
     showNumbersOfDisplay(e);
     resetDisplay(e);
+    calcPercentage(e)
 });
 
 powerButton.addEventListener("click", () => {
@@ -46,8 +49,23 @@ soundButton.addEventListener("click", () => {
     sound.play()
 });
 
-backSpaceButton.addEventListener("click", () => {
-    backSpace();
-});
+const calcPercentage = (e) => {
+   
+const value1 = 1000
+const value2 = 50
+
+console.log(value2)
+console.log(value1)
+
+const percent = value1 * (value2 /100)
+if (e.target.classList.contains('=')){
+    displayArea.value = value1 - percent
+}
+ 
+
+}
+
 
 export { displayArea, divButtons, soundButton, initialNumber, sound };
+
+
