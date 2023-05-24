@@ -11,6 +11,7 @@ const power = () => {
         powerOn = true;
     } else if (powerOn) {
         displayArea.classList.toggle("off-mode");
+        soundButton.classList.toggle("off-mode")
         divButtons.classList.toggle("off-mode");
         displayArea.value = "";
         powerOn = false;

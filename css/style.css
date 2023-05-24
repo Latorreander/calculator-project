@@ -70,6 +70,7 @@ body {
     grid-template: repeat(5, 52px) / repeat(4, 52px);
 }
 
+
 .buttons button {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 18px;
@@ -92,6 +93,7 @@ body {
     height: 22px;
     margin-left: 3px;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .off-mode {

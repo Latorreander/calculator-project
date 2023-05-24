@@ -63,7 +63,7 @@ const backSpace = (e) => {
         numbersArray.pop();
         displayArea.value = numbersArray.join("");
         if (numbersArray.length === 0) {
-            displayArea.value = 0;
+            displayArea.value = '0.';
         }
     }
 };
