@@ -19,7 +19,7 @@ const sound = document.getElementById("sound");
 const soundButton = document.querySelector(".sound-btn");
 const soundPower = document.getElementById("soundPower");
 const sqrRootButton = document.querySelector(".sqr-root");
-// const percentageButton = document.querySelector('.percentage')
+
 
 
 let initialNumber = "0.";
@@ -36,7 +36,6 @@ divButtons.addEventListener("mousedown", (e) => {
     musicEffectButtonNumbers();
     showNumbersOfDisplay(e);
     resetDisplay(e);
-    // calcPercentage(e)
 });
 
 powerButton.addEventListener("click", () => {
@@ -48,12 +47,6 @@ soundButton.addEventListener("click", () => {
     onOffSoundButtons();
     sound.play()
 });
-
-// const calcPercentage = (e) => {
-   
-       
-// }
-
 
 
 export { displayArea, divButtons, soundButton, initialNumber, sound };

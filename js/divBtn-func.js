@@ -67,7 +67,7 @@ const backSpace = (e) => {
         }
     }
 };
-
+  
 export {
     replaceInitialNumber,
     expressionTransform,
@@ -75,5 +75,7 @@ export {
     showNumbersOfDisplay,
     musicEffectButtonNumbers,
     sqrRoot,
-    backSpace,
+    backSpace
 };
+
+
