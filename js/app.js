@@ -20,8 +20,6 @@ const soundButton = document.querySelector(".sound-btn");
 const soundPower = document.getElementById("soundPower");
 const sqrRootButton = document.querySelector(".sqr-root");
 
-
-
 let initialNumber = "0.";
 
 sqrRootButton.addEventListener("click", () => {

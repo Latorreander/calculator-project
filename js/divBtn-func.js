@@ -2,7 +2,6 @@ import { displayArea } from "./app.js";
 import { soundEffect } from "./soundBtn-func.js";
 
 const delayTime = 150;
-const displayClear = "";
 
 const replaceInitialNumber = (e) => {
     const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -19,7 +18,7 @@ const replaceInitialNumber = (e) => {
 const expressionTransform = (e) => {
     if (e.target.classList.contains("=")) {
         let result = eval(displayArea.value);
-        displayClear;
+       displayArea.value= '';
         setTimeout(() => {
             displayArea.value = eval((result += e.target.value));
         }, delayTime);
@@ -38,7 +37,7 @@ const musicEffectButtonNumbers = () => {
 
 const resetDisplay = (e) => {
     if (e.target.classList.contains("clear")) {
-        displayClear;
+        displayArea.value= '';
         setTimeout(() => {
             let initialNumber = "0.";
             displayArea.value = initialNumber;
@@ -48,7 +47,7 @@ const resetDisplay = (e) => {
 
 const sqrRoot = (number) => {
     const sqrResult = Math.sqrt(number);
-    displayClear;
+    displayArea.value= '';
     setTimeout(() => {
         displayArea.value = sqrResult;
     }, delayTime);
@@ -60,7 +59,7 @@ const backSpace = (e) => {
         numbersArray.pop();
         displayArea.value = numbersArray.join("");
         if (numbersArray.length === 0) {
-            displayClear;
+            displayArea.value= '';
             setTimeout(() => {
                 displayArea.value = "0.";
             }, delayTime);
