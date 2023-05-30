@@ -1,4 +1,4 @@
-import { displayArea } from "./app.js";
+import { displayArea, divButtons } from "./app.js";
 import { soundEffect } from "./soundBtn-func.js";
 
 const delayTime = 150;
@@ -26,6 +26,7 @@ const expressionTransform = (e) => {
 };
 
 const showNumbersOfDisplay = (e) => {
+   
     displayArea.value += e.target.value;
 };
 
@@ -78,6 +79,13 @@ const calcPercentage = (e) => {
     }
 };
 
+// const isNotAButton = (e) => {
+//     if (e.target.classList.contains('buttons')) {
+//         divButtons.style.pointerEvent = 'none'
+//     }
+// }
+
+
 export {
     replaceInitialNumber,
     expressionTransform,
@@ -86,5 +94,5 @@ export {
     musicEffectButtonNumbers,
     sqrRoot,
     backSpace,
-    calcPercentage,
+    calcPercentage
 };
