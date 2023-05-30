@@ -6,6 +6,7 @@ import {
     musicEffectButtonNumbers,
     sqrRoot,
     backSpace,
+    calcPercentage,
 } from "./divBtn-func.js";
 
 import { onOffSoundButtons } from "./soundBtn-func.js";
@@ -34,6 +35,7 @@ divButtons.addEventListener("mousedown", (e) => {
     musicEffectButtonNumbers();
     showNumbersOfDisplay(e);
     resetDisplay(e);
+    calcPercentage(e)
 });
 
 powerButton.addEventListener("click", () => {

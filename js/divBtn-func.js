@@ -18,9 +18,9 @@ const replaceInitialNumber = (e) => {
 const expressionTransform = (e) => {
     if (e.target.classList.contains("=")) {
         let result = eval(displayArea.value);
-       displayArea.value= '';
+        displayArea.value = "";
         setTimeout(() => {
-            displayArea.value = eval((result += e.target.value));
+            displayArea.value = eval((result += e.target.value)) + ".";
         }, delayTime);
     }
 };
@@ -37,7 +37,7 @@ const musicEffectButtonNumbers = () => {
 
 const resetDisplay = (e) => {
     if (e.target.classList.contains("clear")) {
-        displayArea.value= '';
+        displayArea.value = "";
         setTimeout(() => {
             let initialNumber = "0.";
             displayArea.value = initialNumber;
@@ -47,9 +47,9 @@ const resetDisplay = (e) => {
 
 const sqrRoot = (number) => {
     const sqrResult = Math.sqrt(number);
-    displayArea.value= '';
+    displayArea.value = "";
     setTimeout(() => {
-        displayArea.value = sqrResult;
+        displayArea.value = sqrResult + ".";
     }, delayTime);
 };
 
@@ -59,14 +59,25 @@ const backSpace = (e) => {
         numbersArray.pop();
         displayArea.value = numbersArray.join("");
         if (numbersArray.length === 0) {
-            displayArea.value= '';
+            displayArea.value = "";
             setTimeout(() => {
                 displayArea.value = "0.";
             }, delayTime);
         }
     }
 };
-  
+
+const calcPercentage = (e) => {
+    if (e.target.classList.contains("percentage")) {
+        const expression = displayArea.value;
+        const resExpression = eval(expression) / 100;
+        displayArea.value = "";
+        setTimeout(() => {
+            displayArea.value = resExpression + ".";
+        }, delayTime);
+    }
+};
+
 export {
     replaceInitialNumber,
     expressionTransform,
@@ -74,7 +85,6 @@ export {
     showNumbersOfDisplay,
     musicEffectButtonNumbers,
     sqrRoot,
-    backSpace
+    backSpace,
+    calcPercentage,
 };
-
-
