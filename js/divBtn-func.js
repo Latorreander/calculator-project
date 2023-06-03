@@ -26,9 +26,13 @@ const expressionTransform = (e) => {
 };
 
 const showNumbersOfDisplay = (e) => {
-   
+    
+  if (e.target.nodeName ==='BUTTON'){
     displayArea.value += e.target.value;
 };
+  }
+   
+   
 
 const musicEffectButtonNumbers = () => {
     if (soundEffect) {
