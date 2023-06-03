@@ -29,19 +29,30 @@ sqrRootButton.addEventListener("click", () => {
 });
 
 divButtons.addEventListener("mousedown", (e) => {
-    replaceInitialNumber(e);
-    try{
-        expressionTransform(e)
-    }catch (e){
-     if (e instanceof SyntaxError){
-        displayArea.value = 'error'
-     }
+
+    const elementClicked = e.target
+
+    if(elementClicked.nodeName === 'BUTTON'){
+        replaceInitialNumber(e);
+        try{
+            expressionTransform(e)
+        }catch (e){
+         if (e instanceof SyntaxError){
+            displayArea.value = 'error'
+
+            setTimeout(() => {
+               displayArea.value = initialNumber
+            }, 900);
+           
+         }
+        }
+        backSpace(e);
+        musicEffectButtonNumbers();
+        showNumbersOfDisplay(e);
+        resetDisplay(e);
+        calcPercentage(e)   
     }
-    backSpace(e);
-    musicEffectButtonNumbers();
-    showNumbersOfDisplay(e);
-    resetDisplay(e);
-    calcPercentage(e)
+    
 });
 
 

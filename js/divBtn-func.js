@@ -1,4 +1,4 @@
-import { displayArea, divButtons } from "./app.js";
+import { displayArea, initialNumber } from "./app.js";
 import { soundEffect } from "./soundBtn-func.js";
 
 const delayTime = 150;
@@ -25,11 +25,10 @@ const expressionTransform = (e) => {
     }
 };
 
+
 const showNumbersOfDisplay = (e) => {
-    
-  if (e.target.nodeName ==='BUTTON'){
     displayArea.value += e.target.value;
-};
+
   }
    
    
@@ -44,7 +43,7 @@ const resetDisplay = (e) => {
     if (e.target.classList.contains("clear")) {
         displayArea.value = "";
         setTimeout(() => {
-            let initialNumber = "0.";
+            //  initialNumber = "0.";
             displayArea.value = initialNumber;
         }, delayTime);
     }
@@ -82,13 +81,6 @@ const calcPercentage = (e) => {
         }, delayTime);
     }
 };
-
-// const isNotAButton = (e) => {
-//     if (e.target.classList.contains('buttons')) {
-//         divButtons.style.pointerEvent = 'none'
-//     }
-// }
-
 
 export {
     replaceInitialNumber,
